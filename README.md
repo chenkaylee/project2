@@ -1,10 +1,10 @@
-## Project 2
+# Project 2
 CS3200 Database Design Spring 2024
 
-# Overview
+## Overview
 In this practicum you will modify the database you built for Project 1 to adjust it to a document based database (Mongo). You can reuse the project description, adjusting the logical model and choosing the main collections to use. Finally you will modify the implementation from Project 1 to make it work with MongoDB and Node.
 
-# Format
+## Format
 This work should be completed individually
 Tasks
 1. (5 pts) Provide the problem requirements and the conceptual model in UML for your project. You can reuse the ones made in Project 1.
