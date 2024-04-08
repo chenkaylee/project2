@@ -1,0 +1,71 @@
+// Product Collection
+// The Product collection can include embedded ProductVariants and references to LimitedEditionLines and Categories. 
+// This allows you to access most product information in a single query.
+{
+  "_id": ObjectId("..."),
+  "name": "Eco-friendly T-shirt",
+  "price": 25.00,
+  "material": "Organic Cotton",
+  "date_added": ISODate("2024-04-01"),
+  "limited_edition_line": ObjectId("..."),
+  "category": ObjectId("..."),
+  "variants": [
+    {
+      "size": "S",
+      "color": "Green",
+      "inventory_count": 50
+    },
+    {
+      "size": "M",
+      "color": "Green",
+      "inventory_count": 75
+    }
+    // ... other variants ...
+  ],
+  "inventory_adjustments": [
+    {
+      "adjustment_date": ISODate("2024-04-10"),
+      "quantity_adjusted": 5,
+      "reason": "Stock replenishment"
+    }
+    // ... other adjustments ...
+  ],
+  "channel_listings": [
+    {
+      "channel_id": ObjectId("..."),
+      "listing_url": "https://www.ecommerce.com/product-id",
+      "price_override": null,
+      "quantity_listed": 125,
+      "listing_date": ISODate("2024-04-02")
+    }
+    // ... other listings ...
+  ]
+}
+
+// LimitedEditionLines Collection
+// The LimitedEditionLines collection holds data about special product lines, including references to the products included in the line.
+{
+  "_id": ObjectId("..."),
+  "name": "Spring 2024 Collection",
+  "description": "A curated collection of spring essentials.",
+  "launch_date": ISODate("2024-03-20"),
+  "end_date": ISODate("2024-06-21"),
+  "products": [ObjectId("..."), ObjectId("...")] // Array of product IDs
+}
+
+// Categories Collection
+// The Categories collection might be simple, holding only the details about each category without embedding or references.
+{
+  "_id": ObjectId("..."),
+  "name": "Apparel",
+  "description": "All clothing items including shirts, trousers, and accessories."
+}
+
+// SalesChannels Collection
+// The SalesChannels collection includes the details of the sales channels without direct embedding, as sales channels might relate to many products.
+{
+  "_id": ObjectId("..."),
+  "name": "Main Online Storefront",
+  "type": "E-commerce platform",
+  "location_url": "https://www.mainstorefront.com"
+}
